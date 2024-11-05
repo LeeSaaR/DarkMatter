@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TextEditorUi</class>
+ <widget class="QWidget" name="TextEditorUi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>926</width>
+    <height>612</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="TextEditor" name="editor">
+      <property name="styleSheet">
+       <string notr="true">QWidget {  background: none; }
+QAbstractScrollArea:focus {border: none; outline: none;}
+
+QAbstractScrollArea {
+font: 12pt &quot;Liberation Mono&quot;;
+background-color: #0a0a14;
+color: #d0d0d0;
+selection-background-color:  #4c3a99;
+selection-color:  #77d977;
+}
+
+/*VERTIKAL*/
+
+QScrollBar:vertical {
+border: none;
+background: #2d2d44;
+width: 10px;
+margin: 0;
+border-radius: 5px;
+}
+
+
+QScrollBar::handle:vertical {	
+background-color: #625282;
+min-height: 30px;
+border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover{	
+background-color: #76649c;
+}
+QScrollBar::handle:vertical:pressed {	
+background-color: #5f498c;
+}
+
+QScrollBar::sub-line:vertical {
+border: none;
+height: 0px;
+}
+
+QScrollBar::add-line:vertical {
+border: none;
+height: 0px;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+background: none;
+}
+
+/*HORIZONTAL*/
+
+QScrollBar:horizontal {
+border: none;
+background: #2d2d44;
+height: 10px;
+margin: 0;
+border-radius: 5px;
+ }
+
+
+QScrollBar::handle:horizontal {	
+background-color: #625282;
+min-width: 30px;
+border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover{	
+background-color: #76649c;
+}
+
+QScrollBar::handle:horizontal:pressed {	
+background-color: #5f498c;
+}
+
+QScrollBar::sub-line:horizontal {
+border: none;
+height: 0px;
+}
+
+QScrollBar::add-line:horizontal {
+border: none;
+height: 0px;
+}
+
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
+background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+background: none;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="tabStopDistance">
+       <double>40.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_controls">
+      <property name="styleSheet">
+       <string notr="true">QFrame {background-color: #1a1a1a;}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_sort">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbtn_normal">
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+color: #a0a0a0;
+background-color: none;
+}
+
+QRadioButton::indicator::unchecked{ 
+border: 3px solid #303030;
+background-color: #303030;
+width: 10px; 
+height: 10px; 
+margin-left: 0px;}
+
+QRadioButton::indicator::checked { 
+border: 3px solid #303030; 
+background-color: #9580bf; 
+width: 10px; 
+height: 10px; 
+margin-left: 0px;
+}</string>
+            </property>
+            <property name="text">
+             <string>normal</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">btnGroup_sort</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbtn_reverse">
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+color: #a0a0a0;
+background-color: none;
+}
+
+QRadioButton::indicator::unchecked{ 
+border: 3px solid #303030;
+background-color: #303030;
+width: 10px; 
+height: 10px; 
+margin-left: 0px;}
+
+QRadioButton::indicator::checked { 
+border: 3px solid #303030; 
+background-color: #9580bf; 
+width: 10px; 
+height: 10px; 
+margin-left: 0px;
+}</string>
+            </property>
+            <property name="text">
+             <string>reverse</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">btnGroup_sort</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbtn_reverse_2">
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+color: #a0a0a0;
+background-color: none;
+}
+
+QRadioButton::indicator::unchecked{ 
+border: 3px solid #303030;
+background-color: #303030;
+width: 10px; 
+height: 10px; 
+margin-left: 0px;}
+
+QRadioButton::indicator::checked { 
+border: 3px solid #303030; 
+background-color: #9580bf; 
+width: 10px; 
+height: 10px; 
+margin-left: 0px;
+}</string>
+            </property>
+            <property name="text">
+             <string>invert</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">btnGroup_sort</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_sort">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>sort</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_options">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_regexp">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>RegExp</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_case">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Case</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_find">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {color: #a0a0a0;}</string>
+            </property>
+            <property name="text">
+             <string>Find:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_find">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+font: 12pt &quot;Liberation Mono&quot;;
+border: 1px solid #4f4f4f;
+background-color: #303030;
+font-size:  12pt;
+color: #d0d0d0;
+text-align: left;
+}</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_replace">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {color: #a0a0a0;}</string>
+            </property>
+            <property name="text">
+             <string>Replace:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_replace">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+font: 12pt &quot;Liberation Mono&quot;;
+border: 1px solid #4f4f4f;
+background-color: #303030;
+font-size:  12pt;
+color: #d0d0d0;
+text-align: left;
+}</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_find_ctrl">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_find">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>find</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_previous">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>previous</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_next">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>next</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_replace_ctrl">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_replace">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>replace</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_replace_all">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+border: none;
+background-color: #303030;
+color: #d0d0d0;
+}
+QPushButton:hover{
+border: none;
+background-color: #393939;
+color: #e0e0e0;
+}
+QPushButton:checked{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:checked:hover{
+border: none;
+background-color: #b19cdb;
+color: #303030;
+}
+
+QPushButton:pressed{
+border: none;
+background-color: #9580bf;
+color: #303030;
+}
+
+QPushButton:disabled{
+border: none;
+background-color: #303030;
+color: #505050;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>replace all</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>287</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TextEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>texteditor.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="btnGroup_sort"/>
+ </buttongroups>
+</ui>

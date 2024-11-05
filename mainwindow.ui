@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dark Matter</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #1a1a1a;
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tab_files">
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane {
+border: none;
+color: #d0d0d0;
+background: none;
+} 
+
+QTabBar::tab {
+background: #303030;
+color: #a0a0a0;
+padding: 5px;
+padding-left: 10px;
+} 
+
+QTabBar::tab:selected { 
+background: #0a0a14; 
+color: #d0d0d0;
+padding: 5px;
+padding-left: 10px;
+}
+
+QTabBar::close-button {
+image: url(&quot;:/data/icons/close.png&quot;);
+border: none;
+width: 3px;
+height: 3px;
+subcontrol-position: right;
+
+background-color: none;
+}
+QTabBar::close-button:hover {
+background-color: #572d2d;
+}
+
+QTabBar::close-button:pressed {
+background-color: #731616;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_current_file">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{color: #a0a0a0;}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+background-color: #1a1a1a;
+color: #b0b0b0;
+}
+
+QMenuBar::item{
+background-color: #1a1a1a;
+color: #b0b0b0;
+}
+
+QMenuBar::item:selected{
+background-color: #8459b3;
+color: #ffffff;
+}</string>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="styleSheet">
+     <string notr="true">QMenu {
+background-color: #1a1a1a;
+color: #b0b0b0;
+}
+
+QMenu::item{
+background-color: #1a1a1a;
+color: #b0b0b0;
+}
+
+QMenu::item:selected {
+background-color: #8459b3;
+color: #ffffff;
+}
+QMenu::item:disabled {
+background-color: #1a1a1a;
+color: #303030;
+}
+</string>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action_new"/>
+    <addaction name="action_open"/>
+    <addaction name="separator"/>
+    <addaction name="action_save"/>
+    <addaction name="action_save_as"/>
+    <addaction name="separator"/>
+    <addaction name="action_close"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="action_new">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="text">
+    <string>Open ...</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="text">
+    <string>Save As ...</string>
+   </property>
+  </action>
+  <action name="action_close">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
